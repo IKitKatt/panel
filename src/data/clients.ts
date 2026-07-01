@@ -613,6 +613,20 @@ export const CLIENTS: Client[] = [
             website: 'https://incy.cc/'
         }
     },
+   {
+        id: 'renoarx',
+        name: 'RenoarX',
+        core: 'xray',
+        platforms: ['windows'],
+        description: 'Modern XRay JSON client.',
+        logo: '/clients/logo/renoar_logo_black.svg',
+        badges: {
+            hwid: true
+        },
+        downloadLinks: {
+            windows: 'https://github.com/RonnyFX/RenoarX/releases/latest',
+        }
+    },
     {
         id: 'deskbox',
         name: 'DeskBox',
@@ -632,7 +646,27 @@ export const CLIENTS: Client[] = [
         links: {
             github: 'https://github.com/mihail-jdanov/DeskBox'
         }
+    },
+    {
+        id: 'inhive',
+        name: 'InHive',
+        core: 'singbox',
+        platforms: ['android', 'windows'],
+        description:
+            'Invite-only VPN client built on sing-box, with modern protocols (Reality, Hysteria2, TUIC).',
+        logo: '/clients/logo/inhive-dark.svg',
+        badges: {
+            hwid: true
+        },
+        downloadLinks: {
+            android: 'https://github.com/TwilgateLabs/inhive-android/releases/latest',
+            windows: 'https://github.com/TwilgateLabs/inhive-windows/releases/latest'
+        },
+        links: {
+            website: 'https://inhive.ru'
+        }
     }
+    
 ]
 
 export function getClientsByPlatform(platform: Platform): Client[] {

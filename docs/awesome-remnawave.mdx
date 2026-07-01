@@ -27,7 +27,9 @@ import RemnawaveMinishopGuide from '/docs/awesome-remnawave/\_install-guides/rem
 import RemnawaveBackuperGuide from '/docs/awesome-remnawave/\_install-guides/remnawave-backuper.md'
 import XrayCheckerGuide from '/docs/awesome-remnawave/\_install-guides/xray-checker.md'
 import WhiteboxGuide from '/docs/awesome-remnawave/\_install-guides/whitebox.md'
+import XrayCheckerStatuspageGuide from '/docs/awesome-remnawave/\_install-guides/xray-checker-statuspage.md'
 import McpRemnawaveGuide from '/docs/awesome-remnawave/\_install-guides/mcp-remnawave.md'
+import InfraBillingGuide from '/docs/awesome-remnawave/\_install-guides/infra-billing.md'
 
 <HeroSection
     title="❤️ Awesome Remnawave"
@@ -83,6 +85,35 @@ import McpRemnawaveGuide from '/docs/awesome-remnawave/\_install-guides/mcp-remn
         }}
     >
         <WhiteboxGuide />
+    </ProjectCard>
+    <ProjectCard
+        id="xray-checker-statuspage"
+        title="Xray Checker Statuspage (Go)"
+        description="A status page built on top of Xray Checker: a single static Go binary that serves the page, polls the checker, and is fully managed through a Telegram bot. Includes incidents, scheduled maintenance, multi-day uptime history, per-server visibility, admin alerts, and SQLite/PostgreSQL storage."
+        author="Mrvibecodic"
+        authorLink="https://github.com/Mrvibecodic"
+        image="/awesome/xray-checker-statuspage.webp"
+        githubRepo="Mrvibecodic/xray-checker-statuspage"
+        links={{
+            github: 'https://github.com/Mrvibecodic/xray-checker-statuspage/tree/go-build',
+            telegram: 'https://t.me/+O5jAhwcYdYhlY2Yy'
+        }}
+    >
+        <XrayCheckerStatuspageGuide />
+    </ProjectCard>
+    <ProjectCard
+        id="infra-billing"
+        title="Infra Billing"
+        description="Self-hosted dashboard for tracking infrastructure costs across 14+ hosting providers (Hetzner, netcup, Vultr, Linode, Selectel, and more). Auto-syncs servers, balances, and payments via provider APIs, with multi-currency conversion, monthly/yearly analytics and forecasting, and Telegram alerts for low balances and upcoming charges."
+        author="mishkatik"
+        authorLink="https://github.com/mishkatik"
+        image="/awesome/infra-billing.webp"
+        githubRepo="mishkatik/infra-billing"
+        links={{
+            github: 'https://github.com/mishkatik/infra-billing'
+        }}
+    >
+        <InfraBillingGuide />
     </ProjectCard>
 </CategorySection>
 
