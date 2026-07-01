@@ -514,7 +514,7 @@ WEBHOOK_SECRET_HEADER=strong_secret_key
 | Variable                                  | Description                                                                                                                                                              | Default | Possible values |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | --------------- |
 | `BANDWIDTH_USAGE_NOTIFICATIONS_ENABLED`   | Enable/Disable bandwidth usage notifications                                                                                                                             | `false` | `true`, `false` |
-| `BANDWIDTH_USAGE_NOTIFICATIONS_THRESHOLD` | The threshold for bandwidth usage notifications. Only in ASC order (example: [60, 80]), must be valid array of integer(min: 25, max: 95) numbers. No more than 5 values. |         |                 |
+| `BANDWIDTH_USAGE_NOTIFICATIONS_THRESHOLD` | The threshold for bandwidth usage notifications. Only in ASC order (example: [60, 80]), must be valid array of integer (min: 25, max: 95) numbers. No more than 5 values. |         |                 |
 
 <details>
 <summary>Example</summary>
@@ -528,10 +528,10 @@ BANDWIDTH_USAGE_NOTIFICATIONS_THRESHOLD=[60, 80]
 
 ## Not Connected Users Notifications
 
-| Variable                                        | Description                                                                                                                                                                                             | Default | Possible values |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------- |
-| `NOT_CONNECTED_USERS_NOTIFICATIONS_ENABLED`     | Enable/Disable not connected users notifications                                                                                                                                                        | `false` | `true`, `false` |
-| `NOT_CONNECTED_USERS_NOTIFICATIONS_AFTER_HOURS` | The hours after which to send notifications for users who haven't connected. Only in ASC order (example: [6, 12, 24]), must be valid array of integer(min: 1, max: 168) numbers. No more than 3 values. |         |                 |
+| Variable                                        | Description                                                                                                                                                                                              | Default | Possible values |
+|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|-----------------|
+| `NOT_CONNECTED_USERS_NOTIFICATIONS_ENABLED`     | Enable/Disable not connected users notifications                                                                                                                                                         | `false` | `true`, `false` |
+| `NOT_CONNECTED_USERS_NOTIFICATIONS_AFTER_HOURS` | The hours after which to send notifications for users who haven't connected. Only in ASC order (example: [6, 12, 24]), must be valid array of integer (min: 1, max: 168) numbers. No more than 3 values. |         |                 |
 
 <details>
 <summary>Example</summary>
@@ -539,9 +539,28 @@ BANDWIDTH_USAGE_NOTIFICATIONS_THRESHOLD=[60, 80]
 ```bash title=".env file"
 ### Not connected users notification (webhook, telegram)
 NOT_CONNECTED_USERS_NOTIFICATIONS_ENABLED=false
-# Only in ASC order (example: [6, 12, 24]), must be valid array of integer(min: 1, max: 168) numbers. No more than 3 values.
+# Only in ASC order (example: [6, 12, 24]), must be valid array of integer (min: 1, max: 168) numbers. No more than 3 values.
 # Each value represents HOURS passed after user creation (user.createdAt)
 NOT_CONNECTED_USERS_NOTIFICATIONS_AFTER_HOURS=[6, 24, 48]
+```
+
+</details>
+
+## Expiration Notifications
+
+| Variable                           | Description                                                                                                                                                                                                                                                                                              | Default | Possible values |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|-----------------|
+| `EXPIRATION_NOTIFICATIONS_ENABLED` | Enable/Disable expiration notifications                                                                                                                                                                                                                                                                  | `false` | `true`, `false` |
+| `EXPIRATION_NOTIFICATIONS`         | The number of hours at which notifications should be sent to users regarding an upcoming or expired subscription. Specified only in ASC format (e.g., [6, 12, 24]); must be a valid array of integers (min.: -168, max.: 168). No more than 5 values in each direction (up to 5 negative and 5 positive) |         |                 |
+
+<details>
+<summary>Example</summary>
+
+```bash title=".env file"
+### Expiration notifications (webhook, telegram)
+EXPIRATION_NOTIFICATIONS_ENABLED=true
+# negative = N hours BEFORE expiration, positive = N hours AFTER expiration
+EXPIRATION_NOTIFICATIONS=[-72, -48, -24, 24]
 ```
 
 </details>
