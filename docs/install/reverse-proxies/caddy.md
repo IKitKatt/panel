@@ -60,7 +60,7 @@ Paste the following configuration.
 ```yaml title="docker-compose.yml"
 services:
     caddy:
-        image: caddy:latest
+        image: caddy:2
         container_name: 'caddy'
         hostname: caddy
         restart: always
