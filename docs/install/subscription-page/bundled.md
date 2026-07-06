@@ -165,13 +165,22 @@ Pay attention to the green lines, they are the ones you need to add.
 
 ```caddy title="Caddyfile"
 https://REPLACE_WITH_YOUR_DOMAIN {
-        reverse_proxy * http://remnawave:3000
+    encode
+    reverse_proxy * http://remnawave:3000
 }
+
 // highlight-next-line-green
 https://SUBSCRIPTION_PAGE_DOMAIN {
 // highlight-next-line-green
-        reverse_proxy * http://remnawave-subscription-page:3010
+    encode
 // highlight-next-line-green
+    reverse_proxy * http://remnawave-subscription-page:3010
+// highlight-next-line-green
+}
+
+:443 {
+    tls internal
+    respond 204
 }
 ```
 
